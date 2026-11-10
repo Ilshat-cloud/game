@@ -1,0 +1,18 @@
+{
+    "idf.currentSetup": "c:\\ESP32\\v5.5.1\\esp-idf",
+    "idf.flashType": "UART",
+    "idf.openOcdConfigs": [
+        "interface/ftdi/esp_ftdi.cfg",
+        "target/esp32s3.cfg"
+    ],
+    "idf.customExtraVars": {
+        "IDF_TARGET": "esp32s3"
+    },
+    "clangd.path": "C:\\Users\\user\\.espressif\\tools\\esp-clang\\esp-19.1.2_20250312\\esp-clang\\bin\\clangd.exe",
+    "clangd.arguments": [
+      "--background-index",
+      "--query-driver=**",
+      "--compile-commands-dir=c:\\Users\\user\\OneDrive\\documents\\esp32\\UEDX80480043ESP32-4.3inch-Touch-Display\\examples\\esp_idf\\05_display_lvgl_port\\build"
+    ],
+    "idf.port": "COM5"
+}

@@ -1,0 +1,102 @@
+menu "Board Support Package"
+
+    config BSP_ERROR_CHECK
+        bool "Enable error check in BSP"
+        default y
+        help
+            Assert on BSP API errors instead of only returning an error code.
+
+    menu "I2C"
+        config BSP_I2C_NUM
+            int "I2C peripheral index"
+            default 0
+            range 0 1
+
+        config BSP_I2C_CLK_SPEED_HZ
+            int "I2C clock speed (Hz)"
+            default 100000
+            help
+                GT911 on this board is more stable at 100 kHz. Use 400000 only
+                if the I2C wiring is short and reliable.
+    endmenu
+
+    menu "Display"
+        choice BSP_LCD_PANEL
+            prompt "4.3\" LCD panel"
+            default BSP_LCD_PANEL_800X480
+            help
+                Same PCB (UEDX80480043E-WB-A/B), different 4.3" LCD module.
+                Component name is bsp_uedx80480043_wb_a (board silkscreen).
+                Resolution, RGB timing, PCLK and bounce buffer height all
+                follow this choice. Swap panels here only; do not edit other
+                Display options.
+
+            config BSP_LCD_PANEL_800X480
+                bool "UEDX80480043 800x480"
+                help
+                    Default 4.3" RGB panel: 800x480, PCLK 16 MHz, bounce 24.
+
+            config BSP_LCD_PANEL_480X272
+                bool "UEDX48270043 480x272"
+                help
+                    Compatible 4.3" RGB panel: 480x272, PCLK 12 MHz, bounce 17.
+        endchoice
+
+        config BSP_LCD_RGB_BOUNCE_BUFFER_HEIGHT
+            int
+            default 17 if BSP_LCD_PANEL_480X272
+            default 24
+            help
+                Derived from the selected 4.3" LCD panel. Not user-editable.
+                800x480 uses 24 (480/24=20); 480x272 uses 17 (272/17=16).
+
+        config BSP_DISPLAY_BRIGHTNESS_LEDC_CH
+            int "Backlight LEDC channel"
+            default 1
+            range 0 7
+    endmenu
+
+    menu "SD card"
+        config BSP_SD_MOUNT_POINT
+            string "SD card mount point"
+            default "/sdcard"
+
+        config BSP_SD_FORMAT_ON_MOUNT_FAIL
+            bool "Format SD card if mounting fails"
+            default n
+    endmenu
+
+    menu "SPIFFS"
+        config BSP_SPIFFS_FORMAT_ON_MOUNT_FAIL
+            bool "Format SPIFFS if mounting fails"
+            default n
+
+        config BSP_SPIFFS_MOUNT_POINT
+            string "SPIFFS mount point"
+            default "/spiffs"
+
+        config BSP_SPIFFS_PARTITION_LABEL
+            string "SPIFFS partition label"
+            default "storage"
+
+        config BSP_SPIFFS_MAX_FILES
+            int "Max files supported for SPIFFS VFS"
+            default 5
+    endmenu
+
+    menu "Wi-Fi"
+        config BSP_WIFI_SSID
+            string "Default STA SSID"
+            default ""
+            help
+                2.4 GHz AP name used with bsp_wifi_connect(CONFIG_BSP_WIFI_SSID, CONFIG_BSP_WIFI_PASSWORD).
+                Leave empty if the application passes SSID at runtime.
+
+        config BSP_WIFI_PASSWORD
+            string "Default STA password"
+            default ""
+            help
+                Password for CONFIG_BSP_WIFI_SSID. Use an empty string for an open network.
+    endmenu
+
+endmenu

@@ -1,0 +1,201 @@
+dependencies:
+  espressif/button:
+    dependencies: []
+    source:
+      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__button
+      type: local
+    version: 4.2.3
+  espressif/cmake_utilities:
+    component_hash: 13fee78a3817e94eb8924bb86ae840940fca970fd3f356fb61e57bad612154f3
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.1'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.3.0
+  espressif/esp_lcd_touch:
+    dependencies: []
+    source:
+      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__esp_lcd_touch
+      type: local
+    version: 1.2.1
+  espressif/esp_lcd_touch_gt911:
+    dependencies: []
+    source:
+      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__esp_lcd_touch_gt911
+      type: local
+    version: 1.2.1
+  espressif/esp_lv_decoder:
+    dependencies: []
+    source:
+      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__esp_lv_decoder
+      type: local
+    version: 0.5.0
+  espressif/esp_lv_fs:
+    dependencies: []
+    source:
+      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__esp_lv_fs
+      type: local
+    version: 1.0.1
+  espressif/esp_lvgl_adapter:
+    dependencies: []
+    source:
+      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__esp_lvgl_adapter
+      type: local
+    version: 0.6.4
+  espressif/esp_mmap_assets:
+    component_hash: 42310c362596de2a37248c2937b1754bc29cd0356b9839e2a77cf791e6bcdde1
+    dependencies:
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: 0.*
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 2.0.1
+  espressif/esp_new_jpeg:
+    component_hash: e1e7e6991193c41ed6c9fc386702aa7821433319e7aa9c3147cd3236310cd69c
+    dependencies: []
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    targets:
+    - esp32
+    - esp32s2
+    - esp32s3
+    - esp32s31
+    - esp32p4
+    - esp32c2
+    - esp32c3
+    - esp32c5
+    - esp32c6
+    - esp32c61
+    - esp32h4
+    version: 1.0.2
+  espressif/freetype:
+    component_hash: aa9f7657a69b2b1c1f49044017fc424081d4e0fe6e97834cb43883548d44e3ca
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.1'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 2.14.3~1
+  espressif/knob:
+    component_hash: b56694054cd34a683ac2a6f3661963ba00b1dab741a4f3bb59ed6666cbc9f3fb
+    dependencies:
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: 0.*
+    - name: idf
+      require: private
+      version: '>=4.4.1'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.1.0
+  espressif/libpng:
+    component_hash: 9a576d8fbd0ddb29330e1f4c4fe82470b3e0e7eca71ea3bc4dce168d0b1088e3
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.1'
+    - name: espressif/zlib
+      registry_url: https://components.espressif.com
+      require: private
+      version: ^1.2.13
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.6.59
+  espressif/qoi:
+    component_hash: a6ba68ee51fabb676458c70b5203e4322b00eabaceecbc969bde360e41d4e304
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 0.20260529.0
+  espressif/zlib:
+    component_hash: 61b7c41a6c7091085555a3cef58722af4bd9078e8708ee00a0e78efb997daf7c
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.1'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.3.2~2
+  idf:
+    source:
+      type: idf
+    version: 5.5.1
+  lvgl/lvgl:
+    component_hash: 7d82410747bbfb319531449749e940f440f8414f041f9eaba13f0d1dd7f58cdd
+    dependencies:
+    - name: espressif/freetype
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: idf_version >=5.5 && $CONFIG{LV_USE_FREETYPE} == True
+      version: ^2.14.3
+    - name: espressif/libjpeg-turbo
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: idf_version >=5.5 && $CONFIG{LV_USE_LIBJPEG_TURBO} == True
+      version: ^3.1.1
+    - name: espressif/libpng
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: idf_version >=5.5 && $CONFIG{LV_USE_LIBPNG} == True
+      version: ^1.6.58
+    - name: espressif/lz4
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: idf_version >=5.5 && $CONFIG{LV_USE_LZ4} == True && $CONFIG{LV_USE_LZ4_INTERNAL}
+          == False
+      version: ^1.10.0
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 9.6.0~1
+  viewesmart/bsp_uedx80480043_wb_a:
+    dependencies: []
+    source:
+      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\viewesmart__bsp_uedx80480043_wb_a
+      type: local
+    version: 1.0.0
+direct_dependencies:
+- espressif/button
+- espressif/cmake_utilities
+- espressif/esp_lcd_touch
+- espressif/esp_lcd_touch_gt911
+- espressif/esp_lv_decoder
+- espressif/esp_lv_fs
+- espressif/esp_lvgl_adapter
+- espressif/esp_mmap_assets
+- espressif/esp_new_jpeg
+- espressif/freetype
+- espressif/knob
+- espressif/libpng
+- espressif/qoi
+- espressif/zlib
+- idf
+- lvgl/lvgl
+- viewesmart/bsp_uedx80480043_wb_a
+manifest_hash: 79c1fdce09fa6fa45223c999595f39ef29f4a05cd6db9cabf6dee756f6dc3127
+target: esp32s3
+version: 2.0.0

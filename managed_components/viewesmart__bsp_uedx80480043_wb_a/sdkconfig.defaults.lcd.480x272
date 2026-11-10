@@ -1,0 +1,8 @@
+# Select this overlay when the PCB is fitted with the UEDX48270043 480x272 module.
+# In CMakeLists.txt:
+#   set(SDKCONFIG_DEFAULTS
+#       "${CMAKE_CURRENT_LIST_DIR}/sdkconfig.defaults"
+#       "${CMAKE_CURRENT_LIST_DIR}/managed_components/viewesmart__bsp_uedx80480043_wb_a/sdkconfig.defaults.lcd.480x272"
+#   )
+# Then delete sdkconfig and rebuild. Timing / PCLK / bounce follow this choice.
+CONFIG_BSP_LCD_PANEL_480X272=y
