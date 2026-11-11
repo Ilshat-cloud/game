@@ -2,7 +2,7 @@
 #include "esp_log.h"
 #include "bsp/bsp_uedx80480043_wb_a.h"
 #include "ui.h"
-
+#include "games.h"
 static const char *TAG = "lvgl_port";
 
 void app_main(void)

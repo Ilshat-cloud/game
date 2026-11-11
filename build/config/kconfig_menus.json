@@ -34491,6 +34491,16 @@
                         "range": null,
                         "title": "GCC string 1-byte align",
                         "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "\"esp_https_ota reads 1024 bytes before the HTTP response may end.\n A small compressed or ddelta package can be shorter than that and\n the download fails with \\\"Complete headers were not received\\\".\n Enable this so idf.py gen_compressed_ota and idf.py gen_diff_ota\n append zero bytes until the file is 1024 bytes. The padding is\n outside the custom header length and MD5.\"",
+                        "id": "CU_OTA_PAD_HTTPS",
+                        "name": "CU_OTA_PAD_HTTPS",
+                        "range": null,
+                        "title": "Pad packed OTA image to 1024 bytes",
+                        "type": "bool"
                     }
                 ],
                 "depends_on": null,

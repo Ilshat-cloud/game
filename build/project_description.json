@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "05_display_lvgl_port",
-    "project_version":    "1",
+    "project_version":    "9f89dc7-dirty",
     "project_path":       "C:/Users/user/OneDrive/documents/esp32/game",
     "idf_path":           "C:/ESP32/v5.5.1/esp-idf",
     "build_dir":          "C:/Users/user/OneDrive/documents/esp32/game/build",
@@ -1450,7 +1450,7 @@
             "managed_reqs": [ "lvgl__lvgl" ],
             "managed_priv_reqs": [ "viewesmart__bsp_uedx80480043_wb_a" ],
             "file": "C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/Users/user/OneDrive/documents/esp32/game/main/main.c", "C:/Users/user/OneDrive/documents/esp32/game/main/ui/images.c", "C:/Users/user/OneDrive/documents/esp32/game/main/ui/screens.c", "C:/Users/user/OneDrive/documents/esp32/game/main/ui/styles.c", "C:/Users/user/OneDrive/documents/esp32/game/main/ui/ui.c", "C:/Users/user/OneDrive/documents/esp32/game/main/ui/ui_events.c", "C:/Users/user/OneDrive/documents/esp32/game/main/ui/ui_font_arial.c" ],
+            "sources": [ "C:/Users/user/OneDrive/documents/esp32/game/main/main.c", "C:/Users/user/OneDrive/documents/esp32/game/main/games.c", "C:/Users/user/OneDrive/documents/esp32/game/main/ui/images.c", "C:/Users/user/OneDrive/documents/esp32/game/main/ui/screens.c", "C:/Users/user/OneDrive/documents/esp32/game/main/ui/styles.c", "C:/Users/user/OneDrive/documents/esp32/game/main/ui/ui.c", "C:/Users/user/OneDrive/documents/esp32/game/main/ui/ui_events.c", "C:/Users/user/OneDrive/documents/esp32/game/main/ui/ui_font_arial.c" ],
             "include_dirs": [ ".", "ui" ]
         },
         "mbedtls": {

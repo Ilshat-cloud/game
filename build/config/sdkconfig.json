@@ -128,6 +128,7 @@
     "CU_DIAGNOSTICS_COLOR_NEVER": false,
     "CU_GCC_LTO_ENABLE": false,
     "CU_GCC_STRING_1BYTE_ALIGN": false,
+    "CU_OTA_PAD_HTTPS": false,
     "CU_RELINKER_ENABLE": false,
     "EFUSE_CUSTOM_TABLE": false,
     "EFUSE_MAX_BLK_LEN": 256,
