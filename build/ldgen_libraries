@@ -162,6 +162,7 @@ C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/usb/libusb.a
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/json/libjson.a
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/lvgl__lvgl/liblvgl__lvgl.a
+C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__led_strip/libespressif__led_strip.a
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__button/libespressif__button.a
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__esp_lcd_touch/libespressif__esp_lcd_touch.a
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/esp_lcd/libesp_lcd.a
@@ -190,4 +191,5 @@ C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__esp_lcd_tou
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__esp_lvgl_adapter/libespressif__esp_lvgl_adapter.a
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/spiffs/libspiffs.a
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/main/libmain.a
+C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__led_strip/libespressif__led_strip.a
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/viewesmart__bsp_uedx80480043_wb_a/libviewesmart__bsp_uedx80480043_wb_a.a

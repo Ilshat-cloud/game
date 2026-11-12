@@ -3,11 +3,42 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_random.h"
+#include <led_strip.h>
+
+#define ONBOARD_LED_PIN 0  // Твой пин IO0
 
 static const char *TAG = "games_engine";
+// Инициализация единственного светодиода на IO0
+led_strip_handle_t onboard_led_init(void) {
+
+    led_strip_config_t strip_config = {
+        .strip_gpio_num = ONBOARD_LED_PIN,   // The GPIO that connected to the LED strip's data line
+        .max_leds = 1,        // The number of LEDs in the strip,
+        .led_pixel_format = LED_PIXEL_FORMAT_GRB, // Pixel format of your LED strip
+        .led_model = LED_MODEL_WS2812,            // LED strip model
+        .flags.invert_out = false,                // whether to invert the output signal
+    };
+
+    led_strip_rmt_config_t rmt_config = {
+        .clk_src = RMT_CLK_SRC_DEFAULT,        // different clock source can lead to different power consumption
+        .resolution_hz = 10 * 1000 * 1000, // 10 MHz
+        .flags.with_dma = false,  
+    };
+
+    // LED Strip object handle
+    led_strip_handle_t led_strip;
+    ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &led_strip));
+    ESP_LOGI(TAG, "Created LED strip object with RMT backend");
+    // Гасим при старте
+    return led_strip;
+}
+
+
+
+
 
 // Текущее состояние игры
-static game_state_t current_game = GAME_STATE_NEIGHBOR_QUENCH;
+static game_state_t current_game = GAME_STATE_MENU;
 static uint8_t game_rounds_setting = 30;
 
 // Заглушка опроса 10 кнопок (возвращает 16-битную маску)
@@ -21,7 +52,7 @@ void write_arcade_leds(uint16_t led_mask) {
 }
 
 
-
+void UpdateLed(led_strip_handle_t led_strip);
 
 // Реализация Игры 2: «Гашение соседей»
 // total_rounds - общее количество раундов
@@ -1503,12 +1534,18 @@ static void run_pilot_navigator_game(uint8_t rounds, uint32_t pilot_interval_ms,
 void games_task(void *pvParameters) {
     (void)pvParameters; 
     ESP_LOGI(TAG, "Games task started on Core %d", xPortGetCoreID());
+    led_strip_handle_t led_strip =onboard_led_init();
+    
+    led_strip_set_pixel(led_strip, 0, 123, 123, 123);
+    led_strip_refresh(led_strip);
+    
 
     while (1) {
+        UpdateLed(led_strip); // Обновляем цвет светодиода на плате
         switch (current_game) {
             case GAME_STATE_MENU:
                 // Ожидание выбора игры в меню
-                vTaskDelay(pdMS_TO_TICKS(100));
+                vTaskDelay(pdMS_TO_TICKS(10));
                 break;
 
             case GAME_STATE_NEIGHBOR_QUENCH:
@@ -1559,4 +1596,20 @@ void games_task(void *pvParameters) {
                 break;
         }
     }
+}
+
+void UpdateLed(led_strip_handle_t led_strip ){
+        
+    static uint8_t red = 0;
+    static uint8_t green = 85;
+    static uint8_t blue = 170; // (исправим тип на uint8_t для простоты)
+
+    // Увеличиваем каждый цвет с разной скоростью, чтобы они смешивались
+    red += 1;
+    green += 2;
+    blue += 3;
+    // Обновляем единственный светодиод на пине IO0
+    led_strip_set_pixel(led_strip, 0, red, green, blue);
+    led_strip_refresh(led_strip);
+
 }

@@ -162,6 +162,7 @@ $<TARGET_FILE:idf::usb>
 $<TARGET_FILE:idf::wifi_provisioning>
 $<TARGET_FILE:__idf_json>
 $<TARGET_FILE:idf::lvgl__lvgl>
+$<TARGET_FILE:idf::espressif__led_strip>
 $<TARGET_FILE:idf::espressif__button>
 $<TARGET_FILE:idf::espressif__esp_lcd_touch>
 $<TARGET_FILE:__idf_esp_lcd>
@@ -190,4 +191,5 @@ $<TARGET_FILE:__idf_espressif__esp_lcd_touch_gt911>
 $<TARGET_FILE:__idf_espressif__esp_lvgl_adapter>
 $<TARGET_FILE:__idf_spiffs>
 $<TARGET_FILE:idf::main>
+$<TARGET_FILE:__idf_espressif__led_strip>
 $<TARGET_FILE:__idf_viewesmart__bsp_uedx80480043_wb_a>

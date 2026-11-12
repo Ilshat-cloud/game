@@ -102,6 +102,12 @@ dependencies:
       registry_url: https://components.espressif.com/
       type: service
     version: 1.1.0
+  espressif/led_strip:
+    dependencies: []
+    source:
+      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__led_strip
+      type: local
+    version: 2.5.5
   espressif/libpng:
     component_hash: 9a576d8fbd0ddb29330e1f4c4fe82470b3e0e7eca71ea3bc4dce168d0b1088e3
     dependencies:
@@ -190,12 +196,13 @@ direct_dependencies:
 - espressif/esp_new_jpeg
 - espressif/freetype
 - espressif/knob
+- espressif/led_strip
 - espressif/libpng
 - espressif/qoi
 - espressif/zlib
 - idf
 - lvgl/lvgl
 - viewesmart/bsp_uedx80480043_wb_a
-manifest_hash: da620d2979e98cca14e68e919c29c8cb8e1044b489d4acd07d1b4914114ae6d4
+manifest_hash: c158477bd64ed800087411cdb1166bf30a3ab5693139abffb3e87fddc061724d
 target: esp32s3
 version: 2.0.0

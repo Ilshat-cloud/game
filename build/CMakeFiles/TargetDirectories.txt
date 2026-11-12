@@ -1121,6 +1121,15 @@ C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/lvgl__lvgl/CMakeFiles/
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/lvgl__lvgl/CMakeFiles/install.dir
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/lvgl__lvgl/CMakeFiles/install/local.dir
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/lvgl__lvgl/CMakeFiles/install/strip.dir
+C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__led_strip/CMakeFiles/__idf_espressif__led_strip.dir
+C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__led_strip/CMakeFiles/package.dir
+C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__led_strip/CMakeFiles/package_source.dir
+C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__led_strip/CMakeFiles/edit_cache.dir
+C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__led_strip/CMakeFiles/rebuild_cache.dir
+C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__led_strip/CMakeFiles/list_install_components.dir
+C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__led_strip/CMakeFiles/install.dir
+C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__led_strip/CMakeFiles/install/local.dir
+C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__led_strip/CMakeFiles/install/strip.dir
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__cmake_utilities/CMakeFiles/package.dir
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__cmake_utilities/CMakeFiles/package_source.dir
 C:/Users/user/OneDrive/documents/esp32/game/build/esp-idf/espressif__cmake_utilities/CMakeFiles/edit_cache.dir
