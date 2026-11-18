@@ -1,49 +1,149 @@
 dependencies:
   espressif/button:
-    dependencies: []
+    component_hash: 26345e8700d3c6435925f9a8f246d224f9c1b99f937c243fe400844eec514b4a
+    dependencies:
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: '*'
+    - name: idf
+      require: private
+      version: '>=4.0'
     source:
-      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__button
-      type: local
+      registry_url: https://components.espressif.com
+      type: service
     version: 4.2.3
   espressif/cmake_utilities:
-    component_hash: afc935d5a93cda71ce3223b817de128d07484439d585e6fe613bde820e17f36a
+    component_hash: 351350613ceafba240b761b4ea991e0f231ac7a9f59a9ee901f751bddc0bb18f
     dependencies:
     - name: idf
       require: private
       version: '>=4.1'
     source:
-      registry_url: https://components.espressif.com/
+      registry_url: https://components.espressif.com
       type: service
-    version: 1.4.1
+    version: 0.5.3
   espressif/esp_lcd_touch:
-    dependencies: []
+    component_hash: 3f85a7d95af876f1a6ecca8eb90a81614890d0f03a038390804e5a77e2caf862
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.4.2'
     source:
-      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__esp_lcd_touch
-      type: local
+      registry_url: https://components.espressif.com
+      type: service
     version: 1.2.1
   espressif/esp_lcd_touch_gt911:
-    dependencies: []
+    component_hash: 737bdf29e0823eacf041381e81db2aaf5d378f3b5417df7f415f83319e3e790b
+    dependencies:
+    - name: espressif/esp_lcd_touch
+      registry_url: https://components.espressif.com
+      require: public
+      version: ^1.2.0
+    - name: idf
+      require: private
+      version: '>=5.2'
     source:
-      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__esp_lcd_touch_gt911
-      type: local
+      registry_url: https://components.espressif.com
+      type: service
     version: 1.2.1
   espressif/esp_lv_decoder:
-    dependencies: []
+    component_hash: e516e65106a78e973d031c8125441b8a9bf2deaefd7dfb06db47eb3de20827ec
+    dependencies:
+    - name: espressif/esp_new_jpeg
+      registry_url: https://components.espressif.com
+      require: private
+      version: 1.*
+    - name: espressif/libpng
+      registry_url: https://components.espressif.com
+      require: private
+      version: 1.*
+    - name: espressif/qoi
+      registry_url: https://components.espressif.com
+      require: private
+      version: ^0.20260529.0
+    - name: idf
+      require: private
+      version: '>=5.3'
+    - name: lvgl/lvgl
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=8.3,<10'
     source:
-      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__esp_lv_decoder
-      type: local
+      registry_url: https://components.espressif.com
+      type: service
+    targets:
+    - esp32
+    - esp32s2
+    - esp32s3
+    - esp32s31
+    - esp32p4
+    - esp32c2
+    - esp32c3
+    - esp32c5
+    - esp32c6
+    - esp32c61
+    - esp32h4
     version: 0.5.1
   espressif/esp_lv_fs:
-    dependencies: []
+    component_hash: 66896007884b817df34c964f9a114fff538ee2674e99fee7159162498b93f94b
+    dependencies:
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: 0.*
+    - name: espressif/esp_mmap_assets
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=1.2'
+    - name: idf
+      require: private
+      version: '>=4.4'
+    - name: lvgl/lvgl
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=8,<10'
     source:
-      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__esp_lv_fs
-      type: local
+      registry_url: https://components.espressif.com
+      type: service
     version: 1.0.1
   espressif/esp_lvgl_adapter:
-    dependencies: []
+    component_hash: bcb316bedda9e934d32567082a969a8e8f8f406dd32d23c359a299249dc18e81
+    dependencies:
+    - name: espressif/button
+      registry_url: https://components.espressif.com
+      require: public
+      version: 4.*
+    - name: espressif/esp_lcd_touch
+      registry_url: https://components.espressif.com
+      require: public
+      version: 1.*
+    - name: espressif/esp_lv_decoder
+      registry_url: https://components.espressif.com
+      require: public
+      version: 0.*
+    - name: espressif/esp_lv_fs
+      registry_url: https://components.espressif.com
+      require: public
+      version: 1.*
+    - name: espressif/freetype
+      registry_url: https://components.espressif.com
+      require: public
+      version: 2.*
+    - name: espressif/knob
+      registry_url: https://components.espressif.com
+      require: public
+      version: 1.*
+    - name: idf
+      require: private
+      version: '>=5.5'
+    - name: lvgl/lvgl
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=8,<10'
     source:
-      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__esp_lvgl_adapter
-      type: local
+      registry_url: https://components.espressif.com
+      type: service
     version: 0.6.4
   espressif/esp_mmap_assets:
     component_hash: 42310c362596de2a37248c2937b1754bc29cd0356b9839e2a77cf791e6bcdde1
@@ -56,14 +156,14 @@ dependencies:
       require: private
       version: '>=5.0'
     source:
-      registry_url: https://components.espressif.com/
+      registry_url: https://components.espressif.com
       type: service
     version: 2.0.1
   espressif/esp_new_jpeg:
     component_hash: e1e7e6991193c41ed6c9fc386702aa7821433319e7aa9c3147cd3236310cd69c
     dependencies: []
     source:
-      registry_url: https://components.espressif.com/
+      registry_url: https://components.espressif.com
       type: service
     targets:
     - esp32
@@ -85,7 +185,7 @@ dependencies:
       require: private
       version: '>=5.1'
     source:
-      registry_url: https://components.espressif.com/
+      registry_url: https://components.espressif.com
       type: service
     version: 2.15.0
   espressif/knob:
@@ -99,14 +199,18 @@ dependencies:
       require: private
       version: '>=4.4.1'
     source:
-      registry_url: https://components.espressif.com/
+      registry_url: https://components.espressif.com
       type: service
     version: 1.1.0
   espressif/led_strip:
-    dependencies: []
+    component_hash: 28c6509a727ef74925b372ed404772aeedf11cce10b78c3f69b3c66799095e2d
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.4'
     source:
-      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\espressif__led_strip
-      type: local
+      registry_url: https://components.espressif.com/
+      type: service
     version: 2.5.5
   espressif/libpng:
     component_hash: 7c9bc5c7b53e3a415855192732a75661b2a8f99ffc37b2dc354484b904d0c53a
@@ -119,7 +223,7 @@ dependencies:
       require: private
       version: ^1.2.13
     source:
-      registry_url: https://components.espressif.com/
+      registry_url: https://components.espressif.com
       type: service
     version: 1.6.59~1
   espressif/qoi:
@@ -129,7 +233,7 @@ dependencies:
       require: private
       version: '>=5.0'
     source:
-      registry_url: https://components.espressif.com/
+      registry_url: https://components.espressif.com
       type: service
     version: 0.20260529.0
   espressif/zlib:
@@ -139,7 +243,7 @@ dependencies:
       require: private
       version: '>=5.1'
     source:
-      registry_url: https://components.espressif.com/
+      registry_url: https://components.espressif.com
       type: service
     version: 1.4.0
   idf:
@@ -179,30 +283,37 @@ dependencies:
       type: service
     version: 9.6.0~1
   viewesmart/bsp_uedx80480043_wb_a:
-    dependencies: []
+    component_hash: d95efc7348954817fb7c6e09b56f5d8b177782854c1c6fc4d242f339442846e1
+    dependencies:
+    - name: espressif/button
+      registry_url: https://components.espressif.com
+      require: public
+      version: ^4
+    - name: espressif/esp_lcd_touch_gt911
+      registry_url: https://components.espressif.com
+      require: public
+      version: ^1
+    - name: espressif/esp_lvgl_adapter
+      registry_url: https://components.espressif.com
+      require: public
+      version: ^0.6
+    - name: idf
+      require: private
+      version: '>=5.5'
+    - name: lvgl/lvgl
+      registry_url: https://components.espressif.com
+      require: public
+      version: ^9
     source:
-      path: C:\Users\user\OneDrive\documents\esp32\game\managed_components\viewesmart__bsp_uedx80480043_wb_a
-      type: local
+      registry_url: https://components.espressif.com/
+      type: service
+    targets:
+    - esp32s3
     version: 1.0.0
 direct_dependencies:
-- espressif/button
-- espressif/cmake_utilities
-- espressif/esp_lcd_touch
-- espressif/esp_lcd_touch_gt911
-- espressif/esp_lv_decoder
-- espressif/esp_lv_fs
-- espressif/esp_lvgl_adapter
-- espressif/esp_mmap_assets
-- espressif/esp_new_jpeg
-- espressif/freetype
-- espressif/knob
 - espressif/led_strip
-- espressif/libpng
-- espressif/qoi
-- espressif/zlib
-- idf
 - lvgl/lvgl
 - viewesmart/bsp_uedx80480043_wb_a
-manifest_hash: 13dcb4e2eaf22ae96017508f9990d834b2349fe94ba237019d73d633726ca7eb
+manifest_hash: 8305e586defeeb637fa810998ae237bdda10c49cbdcd023366a8b65da1dac06d
 target: esp32s3
 version: 2.0.0

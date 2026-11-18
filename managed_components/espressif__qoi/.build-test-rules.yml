@@ -1,4 +1,0 @@
-qoi/examples/qoi_encode:
-  enable:
-    - if: IDF_TARGET in ["esp32", "esp32s3", "esp32c3"]
-      reason: "Sufficient to test on representative Xtensa and RISC-V targets"
