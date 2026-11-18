@@ -203,6 +203,6 @@ direct_dependencies:
 - idf
 - lvgl/lvgl
 - viewesmart/bsp_uedx80480043_wb_a
-manifest_hash: c158477bd64ed800087411cdb1166bf30a3ab5693139abffb3e87fddc061724d
+manifest_hash: 13dcb4e2eaf22ae96017508f9990d834b2349fe94ba237019d73d633726ca7eb
 target: esp32s3
 version: 2.0.0

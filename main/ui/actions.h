@@ -10,6 +10,9 @@ extern "C" {
 extern void action_game_start(lv_event_t * e);
 extern void action_change_screen_to_settings(lv_event_t * e);
 extern void action_back_to_main_window(lv_event_t * e);
+extern void action_round_cnt_changed(lv_event_t * e);
+extern void action_start_selected_game(lv_event_t * e);
+extern void action_stop_current_game(lv_event_t * e);
 
 #ifdef __cplusplus
 }

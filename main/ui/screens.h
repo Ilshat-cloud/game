@@ -22,6 +22,16 @@ typedef struct _objects_t {
     lv_obj_t *game;
     lv_obj_t *settings;
     lv_obj_t *obj0;
+    lv_obj_t *ui_label_legend;
+    lv_obj_t *obj1;
+    lv_obj_t *roun_cnt_slider;
+    lv_obj_t *speed_cnt_slider;
+    lv_obj_t *difficulty_cnt_slider;
+    lv_obj_t *reserved1_cnt_slider;
+    lv_obj_t *reserved2_cnt_clider;
+    lv_obj_t *obj2;
+    lv_obj_t *obj3;
+    lv_obj_t *ui_label_metrics;
 } objects_t;
 
 extern objects_t objects;
