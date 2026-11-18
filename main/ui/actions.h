@@ -7,9 +7,9 @@
 extern "C" {
 #endif
 
-extern void action_game1(lv_event_t * e);
-extern void action_button2(lv_event_t * e);
-extern void action_button3(lv_event_t * e);
+extern void action_game_start(lv_event_t * e);
+extern void action_change_screen_to_settings(lv_event_t * e);
+extern void action_back_to_main_window(lv_event_t * e);
 
 #ifdef __cplusplus
 }

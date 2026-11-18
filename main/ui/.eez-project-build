@@ -11,7 +11,7 @@
     "styles.h",
     "ui.c",
     "ui.h",
-    "ui_font_arial.c",
+    "ui_font_arialciryllic.c",
     "vars.h"
   ]
 }

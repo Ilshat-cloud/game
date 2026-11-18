@@ -30,12 +30,10 @@ void create_screen_main() {
     {
         lv_obj_t *parent_obj = obj;
         {
-            // button1
             lv_obj_t *obj = lv_button_create(parent_obj);
-            objects.button1 = obj;
-            lv_obj_set_pos(obj, 44, 52);
+            lv_obj_set_pos(obj, 51, 43);
             lv_obj_set_size(obj, 198, 80);
-            lv_obj_add_event_cb(obj, action_game1, LV_EVENT_PRESSED, (void *)0);
+            lv_obj_add_event_cb(obj, action_game_start, LV_EVENT_PRESSED, (void *)1);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -43,16 +41,16 @@ void create_screen_main() {
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_obj_set_style_text_font(obj, &lv_font_montserrat_14, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text_static(obj, "Game");
+                    lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Соседи");
                 }
             }
         }
         {
             lv_obj_t *obj = lv_button_create(parent_obj);
-            lv_obj_set_pos(obj, 45, 152);
+            lv_obj_set_pos(obj, 52, 146);
             lv_obj_set_size(obj, 198, 80);
-            lv_obj_add_event_cb(obj, action_button2, LV_EVENT_PRESSED, (void *)0);
+            lv_obj_add_event_cb(obj, action_game_start, LV_EVENT_PRESSED, (void *)2);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -60,30 +58,33 @@ void create_screen_main() {
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text_static(obj, "Button");
+                    lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Вспышка");
                 }
             }
         }
         {
             lv_obj_t *obj = lv_button_create(parent_obj);
-            lv_obj_set_pos(obj, 46, 258);
+            lv_obj_set_pos(obj, 53, 252);
             lv_obj_set_size(obj, 198, 80);
+            lv_obj_add_event_cb(obj, action_game_start, LV_EVENT_PRESSED, (void *)3);
             {
                 lv_obj_t *parent_obj = obj;
                 {
                     lv_obj_t *obj = lv_label_create(parent_obj);
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-                    lv_obj_add_event_cb(obj, action_button3, LV_EVENT_PRESSED, (void *)0);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text_static(obj, "Button");
+                    lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Память");
                 }
             }
         }
         {
             lv_obj_t *obj = lv_button_create(parent_obj);
-            lv_obj_set_pos(obj, 47, 367);
+            lv_obj_set_pos(obj, 54, 356);
             lv_obj_set_size(obj, 198, 80);
+            lv_obj_add_event_cb(obj, action_game_start, LV_EVENT_PRESSED, (void *)4);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -91,14 +92,17 @@ void create_screen_main() {
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text_static(obj, "Button");
+                    lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Бей крота");
                 }
             }
         }
         {
             lv_obj_t *obj = lv_button_create(parent_obj);
-            lv_obj_set_pos(obj, 268, 52);
+            lv_obj_set_pos(obj, 307, 43);
             lv_obj_set_size(obj, 198, 80);
+            lv_obj_add_event_cb(obj, action_game_start, LV_EVENT_PRESSED, (void *)5);
+            lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -106,14 +110,15 @@ void create_screen_main() {
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text_static(obj, "Button");
+                    lv_label_set_text_static(obj, "Меняй свечу");
                 }
             }
         }
         {
             lv_obj_t *obj = lv_button_create(parent_obj);
-            lv_obj_set_pos(obj, 269, 152);
+            lv_obj_set_pos(obj, 308, 146);
             lv_obj_set_size(obj, 198, 80);
+            lv_obj_add_event_cb(obj, action_game_start, LV_EVENT_PRESSED, (void *)6);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -121,14 +126,16 @@ void create_screen_main() {
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text_static(obj, "Button");
+                    lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Тайный код ");
                 }
             }
         }
         {
             lv_obj_t *obj = lv_button_create(parent_obj);
-            lv_obj_set_pos(obj, 269, 258);
+            lv_obj_set_pos(obj, 308, 252);
             lv_obj_set_size(obj, 198, 80);
+            lv_obj_add_event_cb(obj, action_game_start, LV_EVENT_PRESSED, (void *)7);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -136,14 +143,16 @@ void create_screen_main() {
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text_static(obj, "Button");
+                    lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Зеркальное отражение");
                 }
             }
         }
         {
             lv_obj_t *obj = lv_button_create(parent_obj);
-            lv_obj_set_pos(obj, 269, 367);
+            lv_obj_set_pos(obj, 308, 356);
             lv_obj_set_size(obj, 198, 80);
+            lv_obj_add_event_cb(obj, action_game_start, LV_EVENT_PRESSED, (void *)8);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -151,7 +160,79 @@ void create_screen_main() {
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text_static(obj, "Button");
+                    lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Светофор");
+                }
+            }
+        }
+        {
+            lv_obj_t *obj = lv_button_create(parent_obj);
+            lv_obj_set_pos(obj, 544, 43);
+            lv_obj_set_size(obj, 198, 80);
+            lv_obj_add_event_cb(obj, action_game_start, LV_EVENT_PRESSED, (void *)9);
+            lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                    lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Электрическая цепь");
+                }
+            }
+        }
+        {
+            lv_obj_t *obj = lv_button_create(parent_obj);
+            lv_obj_set_pos(obj, 545, 146);
+            lv_obj_set_size(obj, 198, 80);
+            lv_obj_add_event_cb(obj, action_game_start, LV_EVENT_PRESSED, (void *)10);
+            lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                    lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Погоня за волной");
+                }
+            }
+        }
+        {
+            lv_obj_t *obj = lv_button_create(parent_obj);
+            lv_obj_set_pos(obj, 546, 252);
+            lv_obj_set_size(obj, 198, 80);
+            lv_obj_add_event_cb(obj, action_game_start, LV_EVENT_PRESSED, (void *)11);
+            lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                    lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Пилот и штурман");
+                }
+            }
+        }
+        {
+            lv_obj_t *obj = lv_button_create(parent_obj);
+            objects.obj0 = obj;
+            lv_obj_set_pos(obj, 705, 440);
+            lv_obj_set_size(obj, 95, 40);
+            lv_obj_add_event_cb(obj, action_change_screen_to_settings, LV_EVENT_PRESSED, (void *)0);
+            lv_obj_set_style_bg_color(obj, lv_color_hex(0xf37821), LV_PART_MAIN | LV_STATE_DEFAULT);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                    lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Настройки");
                 }
             }
         }
@@ -163,12 +244,80 @@ void create_screen_main() {
 void tick_screen_main() {
 }
 
+void create_screen_game() {
+    lv_obj_t *obj = lv_obj_create(0);
+    objects.game = obj;
+    lv_obj_set_pos(obj, 0, 0);
+    lv_obj_set_size(obj, 800, 480);
+    {
+        lv_obj_t *parent_obj = obj;
+        {
+            lv_obj_t *obj = lv_button_create(parent_obj);
+            lv_obj_set_pos(obj, 634, 415);
+            lv_obj_set_size(obj, 138, 55);
+            lv_obj_add_event_cb(obj, action_back_to_main_window, LV_EVENT_PRESSED, (void *)0);
+            lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DISABLED);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                    lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DISABLED);
+                    lv_label_set_text_static(obj, "Back");
+                }
+            }
+        }
+    }
+    
+    tick_screen_game();
+}
+
+void tick_screen_game() {
+}
+
+void create_screen_settings() {
+    lv_obj_t *obj = lv_obj_create(0);
+    objects.settings = obj;
+    lv_obj_set_pos(obj, 0, 0);
+    lv_obj_set_size(obj, 800, 480);
+    {
+        lv_obj_t *parent_obj = obj;
+        {
+            lv_obj_t *obj = lv_button_create(parent_obj);
+            lv_obj_set_pos(obj, 627, 415);
+            lv_obj_set_size(obj, 138, 55);
+            lv_obj_add_event_cb(obj, action_back_to_main_window, LV_EVENT_PRESSED, (void *)0);
+            lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DISABLED);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                    lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_text_font(obj, &ui_font_arialciryllic, LV_PART_MAIN | LV_STATE_DISABLED);
+                    lv_label_set_text_static(obj, "Back");
+                }
+            }
+        }
+    }
+    
+    tick_screen_settings();
+}
+
+void tick_screen_settings() {
+}
+
 typedef void (*tick_screen_func_t)();
 tick_screen_func_t tick_screen_funcs[] = {
     tick_screen_main,
+    tick_screen_game,
+    tick_screen_settings,
 };
 void tick_screen(int screen_index) {
-    if (screen_index >= 0 && screen_index < 1) {
+    if (screen_index >= 0 && screen_index < 3) {
         tick_screen_funcs[screen_index]();
     }
 }
@@ -181,7 +330,7 @@ void tick_screen_by_id(enum ScreensEnum screenId) {
 //
 
 ext_font_desc_t fonts[] = {
-    { "arial", &ui_font_arial },
+    { "arialciryllic", &ui_font_arialciryllic },
 #if LV_FONT_MONTSERRAT_8
     { "MONTSERRAT_8", &lv_font_montserrat_8 },
 #endif
@@ -267,4 +416,6 @@ void create_screens() {
     // Initialize screens
     // Create screens
     create_screen_main();
+    create_screen_game();
+    create_screen_settings();
 }
