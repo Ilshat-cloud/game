@@ -105,7 +105,7 @@ void action_start_selected_game(lv_event_t * e) {
 
     // 2. Период опроса / скорость в мс (например, 0..100 -> 1000..50 мс: чем выше скорость, тем меньше период)
     // Если нужен просто прямой масштаб 0..100 -> 0..1000 мс, замени формулу на: (uint32_t)speed_val * 10
-    game_settings.frequency_ms = 1000U - ((uint32_t)speed_val * 990U) / 100U;
+    game_settings.frequency_ms = 200U - ((uint32_t)speed_val * 199U) / 100U;
 
     // 3. Длительность в секундах (например, 0..100 -> 0..120 сек)
     game_settings.game_duriation_sec = ((uint32_t)duration_val * 120U) / 100U;
