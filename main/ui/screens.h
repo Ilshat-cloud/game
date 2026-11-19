@@ -27,7 +27,7 @@ typedef struct _objects_t {
     lv_obj_t *roun_cnt_slider;
     lv_obj_t *speed_cnt_slider;
     lv_obj_t *difficulty_cnt_slider;
-    lv_obj_t *reserved1_cnt_slider;
+    lv_obj_t *duriation_cnt_slider;
     lv_obj_t *reserved2_cnt_clider;
     lv_obj_t *obj2;
     lv_obj_t *obj3;

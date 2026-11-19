@@ -38,9 +38,8 @@ led_strip_handle_t onboard_led_init(void) {
 
 
 // Текущее состояние игры
-static game_state_t current_game = GAME_STATE_MENU;
-static uint8_t game_rounds_setting = 30;
-
+game_state_t current_game = GAME_STATE_MENU;
+game_settings_t game_settings = {30, 30, 30, 0, 0}; // Настройки игры по умолчанию
 // Заглушка опроса 10 кнопок (возвращает 16-битную маску)
 uint16_t read_arcade_buttons(void) {
     //TODO Здесь в будущем будет опрос пионов GPIO
@@ -1549,47 +1548,47 @@ void games_task(void *pvParameters) {
                 break;
 
             case GAME_STATE_NEIGHBOR_QUENCH:
-                run_neighbor_quench_game(game_rounds_setting,50);
+                run_neighbor_quench_game(game_settings.rounds,game_settings.frequency_ms);
                 break;
             case GAME_STATE_FLASH:
                 // Запускаем на 15 раундов с периодом опроса логики в 10 мс (высокая точность таймера)
-                run_flash_game(15, 10); 
+                run_flash_game(game_settings.rounds, game_settings.frequency_ms); 
                 break;    
             case GAME_STATE_SIMON:
                 // Запускаем Саймона до 20 уровней с тиком игрового цикла 50 мс
-                run_simon_game(20, 50); 
+                run_simon_game(game_settings.rounds, game_settings.frequency_ms); 
                 break;
             case GAME_STATE_WHACK_MOLE:
                 // Раунд на 30 секунд, опрос логики каждые 50 мс
-                run_whack_mole_game(30, 50); 
+                run_whack_mole_game(game_settings.game_duriation_sec, game_settings.frequency_ms); 
                 break;
             case GAME_STATE_CANDLE_SHOOT:
                 // Время до сгорания свечи 2000 мс (2 сек), общая длительность игры 30 секунд
-                run_candle_shoot_game(2000, 30); 
+                run_candle_shoot_game(game_settings.difficulty_level1, game_settings.game_duriation_sec); 
                 break;
             case GAME_STATE_SECRET_CODE:
                 // Код из 4 элементов, за один раз игрок вводит 4 кнопки, игра идет 60 секунд, опрос каждые 50 мс
-                run_secret_code_game(4, 4, 60, 50); 
+                run_secret_code_game(game_settings.difficulty_level1, game_settings.difficulty_level2, game_settings.game_duriation_sec, game_settings.frequency_ms); 
                 break;
             case GAME_STATE_TRAFFIC_LIGHT:
                 // 10 раундов цепочек, таймаут нажатия 2 секунды, опрос каждые 50 мс
-                run_traffic_light_game(10, 2, 50); 
+                run_traffic_light_game(game_settings.rounds, game_settings.difficulty_level1, game_settings.frequency_ms); 
                 break;
 
             case GAME_STATE_MIRROR:
-                run_mirror_game(15, 3, 50);
+                run_mirror_game(game_settings.rounds, game_settings.difficulty_level1, game_settings.frequency_ms);
                 break;
             case GAME_STATE_ELECTRIC_CIRCUIT:
                 // 4 диода в паттерне, 60 секунд таймаут, опрос каждые 50 мс
-                run_electric_circuit_game(4, 60, 50); 
+                run_electric_circuit_game(game_settings.difficulty_level1, game_settings.game_duriation_sec, game_settings.frequency_ms); 
                 break;
             case GAME_STATE_WAVE_CHASE:
                 // 5 раундов, скорость 25 тиков, ускорение на 3 тика, ширина волны = 2 диода
-                run_wave_chase_game(5, 25, 3,2); 
+                run_wave_chase_game(game_settings.rounds, game_settings.frequency_ms, game_settings.difficulty_level1,game_settings.difficulty_level2); 
                 break;
             case GAME_STATE_PILOT_NAVIGATOR:
                 // 10 раундов Пилота, смена задачи Пилота каждые 3000 мс, вспышки Штурмана каждые 1200 мс, опрос 50 мс
-                run_pilot_navigator_game(10, 3000, 1200, 50); 
+                run_pilot_navigator_game(game_settings.rounds, game_settings.difficulty_level1, game_settings.difficulty_level2, game_settings.frequency_ms); 
                 break;
             default:
                 current_game = GAME_STATE_MENU;

@@ -325,7 +325,7 @@ void create_screen_game() {
                     // speed_cnt_slider
                     lv_obj_t *obj = lv_slider_create(parent_obj);
                     objects.speed_cnt_slider = obj;
-                    lv_obj_set_pos(obj, 149, 77);
+                    lv_obj_set_pos(obj, 149, 88);
                     lv_obj_set_size(obj, 209, 10);
                     lv_slider_set_value(obj, 25, LV_ANIM_OFF);
                 }
@@ -333,15 +333,15 @@ void create_screen_game() {
                     // difficulty_cnt_slider
                     lv_obj_t *obj = lv_slider_create(parent_obj);
                     objects.difficulty_cnt_slider = obj;
-                    lv_obj_set_pos(obj, 149, 119);
+                    lv_obj_set_pos(obj, 149, 145);
                     lv_obj_set_size(obj, 209, 10);
                     lv_slider_set_value(obj, 25, LV_ANIM_OFF);
                 }
                 {
-                    // reserved1_cnt_slider
+                    // duriation_cnt_slider
                     lv_obj_t *obj = lv_slider_create(parent_obj);
-                    objects.reserved1_cnt_slider = obj;
-                    lv_obj_set_pos(obj, 149, 160);
+                    objects.duriation_cnt_slider = obj;
+                    lv_obj_set_pos(obj, 149, 202);
                     lv_obj_set_size(obj, 209, 10);
                     lv_slider_set_value(obj, 25, LV_ANIM_OFF);
                 }
@@ -349,7 +349,7 @@ void create_screen_game() {
                     // reserved2_cnt_clider
                     lv_obj_t *obj = lv_slider_create(parent_obj);
                     objects.reserved2_cnt_clider = obj;
-                    lv_obj_set_pos(obj, 155, 211);
+                    lv_obj_set_pos(obj, 149, 258);
                     lv_obj_set_size(obj, 209, 10);
                     lv_slider_set_value(obj, 25, LV_ANIM_OFF);
                 }
@@ -362,28 +362,28 @@ void create_screen_game() {
                 }
                 {
                     lv_obj_t *obj = lv_label_create(parent_obj);
-                    lv_obj_set_pos(obj, 2, 59);
+                    lv_obj_set_pos(obj, 2, 74);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_text_font(obj, &ui_font_arialcyrillic, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_label_set_text_static(obj, "Скорость \nигры");
                 }
                 {
                     lv_obj_t *obj = lv_label_create(parent_obj);
-                    lv_obj_set_pos(obj, 0, 113);
+                    lv_obj_set_pos(obj, 0, 141);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_text_font(obj, &ui_font_arialcyrillic, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_label_set_text_static(obj, "Сложность");
                 }
                 {
                     lv_obj_t *obj = lv_label_create(parent_obj);
-                    lv_obj_set_pos(obj, 1, 147);
+                    lv_obj_set_pos(obj, 0, 184);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_text_font(obj, &ui_font_arialcyrillic, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text_static(obj, "резерв");
+                    lv_label_set_text_static(obj, "Продолжи-\nтельность");
                 }
                 {
                     lv_obj_t *obj = lv_label_create(parent_obj);
-                    lv_obj_set_pos(obj, 2, 193);
+                    lv_obj_set_pos(obj, 2, 251);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_text_font(obj, &ui_font_arialcyrillic, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_label_set_text_static(obj, "резерв");

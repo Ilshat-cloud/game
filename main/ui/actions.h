@@ -14,6 +14,9 @@ extern void action_round_cnt_changed(lv_event_t * e);
 extern void action_start_selected_game(lv_event_t * e);
 extern void action_stop_current_game(lv_event_t * e);
 
+
+void set_var_metrics(const char *value);
+const char *get_var_metrics(void);
 #ifdef __cplusplus
 }
 #endif

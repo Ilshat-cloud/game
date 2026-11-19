@@ -8,6 +8,7 @@
 // Перечисление всех игровых режимов
 typedef enum {
     GAME_STATE_MENU = 0,
+    GAME_STATE_RESERVED = 1, // Зарезервировано для будущих игр
     GAME_STATE_NEIGHBOR_QUENCH, // Игра 2: Гашение соседей
     GAME_STATE_FLASH,           // Игра 3: Вспышка 
     GAME_STATE_SIMON,           // Игра 4: Память
@@ -49,7 +50,14 @@ typedef struct {
         uint32_t fade_timer;    // Таймер процесса сгорания
     } candle_t;    
 
-    
+typedef struct{
+        uint8_t rounds;          // Количество раундов
+        uint32_t frequency_ms;   // Период опроса в миллисекундах
+        uint32_t game_duriation_sec; // Длительность игры в секундах (для игр с таймером)
+        uint32_t difficulty_level1; // Уровень сложности (для игр с настройкой других параметров закидываем сюда)
+        uint32_t difficulty_level2; // Уровень сложности (для игр с настройкой других параметров закидываем сюда)
+    } game_settings_t;
+
 typedef enum {
         MIRROR_SPAWN,
         MIRROR_WAIT_INPUT,
