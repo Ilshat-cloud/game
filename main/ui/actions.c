@@ -173,10 +173,15 @@ void action_start_selected_game(lv_event_t * e) {
              (unsigned long)game_settings.difficulty_level2);
 
     current_game = (game_state_t)game_id;
+    lv_obj_clear_state(objects.btn_stop, LV_STATE_DISABLED);
+    lv_obj_add_state(objects.btn_start, LV_STATE_DISABLED);
+    //TODO после gmae over разблокировать кнопку старт и заблокировать кнопку стоп
 }
 
 // Функция для кнопки "Стоп / Пауза" (вызывается из интерфейса)
 void action_stop_current_game(lv_event_t * e) {
     //Возвращаем в меню ожидания
     current_game = GAME_STATE_MENU; 
+    lv_obj_clear_state(objects.btn_start, LV_STATE_DISABLED);
+    lv_obj_add_state(objects.btn_stop, LV_STATE_DISABLED);
 }

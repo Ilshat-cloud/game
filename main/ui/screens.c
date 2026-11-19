@@ -318,39 +318,31 @@ void create_screen_game() {
                     lv_obj_t *obj = lv_slider_create(parent_obj);
                     objects.roun_cnt_slider = obj;
                     lv_obj_set_pos(obj, 149, 31);
-                    lv_obj_set_size(obj, 209, 10);
+                    lv_obj_set_size(obj, 209, 20);
                     lv_slider_set_value(obj, 25, LV_ANIM_OFF);
                 }
                 {
                     // speed_cnt_slider
                     lv_obj_t *obj = lv_slider_create(parent_obj);
                     objects.speed_cnt_slider = obj;
-                    lv_obj_set_pos(obj, 149, 88);
-                    lv_obj_set_size(obj, 209, 10);
+                    lv_obj_set_pos(obj, 149, 101);
+                    lv_obj_set_size(obj, 209, 20);
                     lv_slider_set_value(obj, 25, LV_ANIM_OFF);
                 }
                 {
                     // difficulty_cnt_slider
                     lv_obj_t *obj = lv_slider_create(parent_obj);
                     objects.difficulty_cnt_slider = obj;
-                    lv_obj_set_pos(obj, 149, 145);
-                    lv_obj_set_size(obj, 209, 10);
+                    lv_obj_set_pos(obj, 149, 170);
+                    lv_obj_set_size(obj, 209, 20);
                     lv_slider_set_value(obj, 25, LV_ANIM_OFF);
                 }
                 {
                     // duriation_cnt_slider
                     lv_obj_t *obj = lv_slider_create(parent_obj);
                     objects.duriation_cnt_slider = obj;
-                    lv_obj_set_pos(obj, 149, 202);
-                    lv_obj_set_size(obj, 209, 10);
-                    lv_slider_set_value(obj, 25, LV_ANIM_OFF);
-                }
-                {
-                    // reserved2_cnt_clider
-                    lv_obj_t *obj = lv_slider_create(parent_obj);
-                    objects.reserved2_cnt_clider = obj;
-                    lv_obj_set_pos(obj, 149, 258);
-                    lv_obj_set_size(obj, 209, 10);
+                    lv_obj_set_pos(obj, 149, 240);
+                    lv_obj_set_size(obj, 209, 20);
                     lv_slider_set_value(obj, 25, LV_ANIM_OFF);
                 }
                 {
@@ -362,41 +354,37 @@ void create_screen_game() {
                 }
                 {
                     lv_obj_t *obj = lv_label_create(parent_obj);
-                    lv_obj_set_pos(obj, 2, 74);
+                    lv_obj_set_pos(obj, 2, 89);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_text_font(obj, &ui_font_arialcyrillic, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_label_set_text_static(obj, "Скорость \nигры");
                 }
                 {
                     lv_obj_t *obj = lv_label_create(parent_obj);
-                    lv_obj_set_pos(obj, 0, 141);
+                    lv_obj_set_pos(obj, 0, 170);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_text_font(obj, &ui_font_arialcyrillic, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_label_set_text_static(obj, "Сложность");
                 }
                 {
                     lv_obj_t *obj = lv_label_create(parent_obj);
-                    lv_obj_set_pos(obj, 0, 184);
+                    lv_obj_set_pos(obj, 0, 228);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_text_font(obj, &ui_font_arialcyrillic, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_label_set_text_static(obj, "Продолжи-\nтельность");
                 }
-                {
-                    lv_obj_t *obj = lv_label_create(parent_obj);
-                    lv_obj_set_pos(obj, 2, 251);
-                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-                    lv_obj_set_style_text_font(obj, &ui_font_arialcyrillic, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text_static(obj, "резерв");
-                }
             }
         }
         {
+            // btn_stop
             lv_obj_t *obj = lv_button_create(parent_obj);
-            objects.obj2 = obj;
+            objects.btn_stop = obj;
             lv_obj_set_pos(obj, 285, 416);
             lv_obj_set_size(obj, 201, 55);
             lv_obj_add_event_cb(obj, action_stop_current_game, LV_EVENT_PRESSED, (void *)0);
+            lv_obj_add_state(obj, LV_STATE_DISABLED);
             lv_obj_set_style_text_font(obj, &ui_font_arialcyrillic, LV_PART_MAIN | LV_STATE_DISABLED);
+            lv_obj_set_style_bg_color(obj, lv_color_hex(0x846c6c), LV_PART_MAIN | LV_STATE_DISABLED);
             lv_obj_set_style_text_font(obj, &ui_font_arialcyrillic, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_bg_color(obj, lv_color_hex(0xf32121), LV_PART_MAIN | LV_STATE_DEFAULT);
             {
@@ -412,12 +400,14 @@ void create_screen_game() {
             }
         }
         {
+            // btn_start
             lv_obj_t *obj = lv_button_create(parent_obj);
-            objects.obj3 = obj;
+            objects.btn_start = obj;
             lv_obj_set_pos(obj, 49, 416);
             lv_obj_set_size(obj, 202, 55);
             lv_obj_add_event_cb(obj, action_start_selected_game, LV_EVENT_PRESSED, (void *)0);
             lv_obj_set_style_text_font(obj, &ui_font_arialcyrillic, LV_PART_MAIN | LV_STATE_DISABLED);
+            lv_obj_set_style_bg_color(obj, lv_color_hex(0x809682), LV_PART_MAIN | LV_STATE_DISABLED);
             lv_obj_set_style_text_font(obj, &ui_font_arialcyrillic, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_bg_color(obj, lv_color_hex(0x0aa019), LV_PART_MAIN | LV_STATE_DEFAULT);
             {

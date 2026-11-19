@@ -28,9 +28,8 @@ typedef struct _objects_t {
     lv_obj_t *speed_cnt_slider;
     lv_obj_t *difficulty_cnt_slider;
     lv_obj_t *duriation_cnt_slider;
-    lv_obj_t *reserved2_cnt_clider;
-    lv_obj_t *obj2;
-    lv_obj_t *obj3;
+    lv_obj_t *btn_stop;
+    lv_obj_t *btn_start;
     lv_obj_t *ui_label_metrics;
 } objects_t;
 
